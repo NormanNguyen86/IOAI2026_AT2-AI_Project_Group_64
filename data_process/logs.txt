@@ -1,0 +1,355 @@
+[s01] 65 CAMELS-AUS catchments pass state/area rule
+D:\StudySpace\MoAI_UTS\2026_Spring\IOAI\Assignments\AT2\data_process\steps\s01_catchments.py:86: DeprecationWarning: The 'shapely.ops.transform()' function is deprecated. Use 'shapely.transform()' or 'shapely.transform_coordseq()' instead. See https://shapely.readthedocs.io/en/latest/manual.html#shapely.ops.transform for more details.
+  Pr = shp_transform(to_r, P)
+[s01] 13 catchments kept: 201001(r66), 203010(r66), 203030(r28), 204017(r28), 204025(r28), 204030(r28), 204034(r28), 204036(r28), 204037(r28), 204039(r66), 204056(r28), 204906(r28), 206014(r28)
+=== step 1 done in 9s ===
+=== step 2: s02_levels ===
+[s02] 201001: 348,523 readings -> 61,607 hours
+[s02] 203010: 290,666 readings -> 61,678 hours
+[s02] 203030: 270,625 readings -> 61,361 hours
+[s02] 204017: 272,304 readings -> 61,719 hours
+[s02] 204025: 273,166 readings -> 61,919 hours
+[s02] 204030: 272,833 readings -> 61,847 hours
+[s02] 204034: 346,581 readings -> 61,789 hours
+[s02] 204036: 272,767 readings -> 61,827 hours
+[s02] 204037: 271,398 readings -> 61,719 hours
+[s02] 204039: 272,022 readings -> 61,768 hours
+[s02] 204056: 272,774 readings -> 61,861 hours
+[s02] 204906: 273,079 readings -> 61,916 hours
+[s02] 206014: 272,609 readings -> 61,793 hours
+=== step 2 done in 183s ===
+=== step 3: s03_events ===
+[s03] 201001: threshold 1.848 m (p99_train), 32 events
+[s03] 203010: threshold 2.631 m (p99_train), 33 events
+[s03] 203030: threshold 3.119 m (p99_train), 16 events
+[s03] 204017: threshold 1.711 m (p99_train), 34 events
+[s03] 204025: threshold 2.013 m (p99_train), 27 events
+[s03] 204030: threshold 1.212 m (p99_train), 25 events
+[s03] 204034: threshold 1.441 m (p99_train), 22 events
+[s03] 204036: threshold 2.184 m (p99_train), 21 events
+[s03] 204037: threshold 1.480 m (p99_train), 29 events
+[s03] 204039: threshold 1.747 m (p99_train), 22 events
+[s03] 204056: threshold 1.269 m (p99_train), 28 events
+[s03] 204906: threshold 6.013 m (p99_train), 15 events
+[s03] 206014: threshold 1.299 m (p99_train), 35 events
+=== step 3 done in 5s ===
+=== step 4: s04_radar ===
+[s04] radar 28: 2019-07 started
+[s04] radar 28: 2019-08 started
+[s04] radar 28 2019-08-22: no file (404)
+[s04] radar 28 2019-08-23: no file (404)
+[s04] radar 28 2019-08-24: no file (404)
+[s04] radar 28 2019-08-25: no file (404)
+[s04] radar 28 2019-08-26: no file (404)
+[s04] radar 28: 2019-09 started
+[s04] radar 28: 2019-10 started
+[s04] radar 28 2019-10-28: no file (404)
+[s04] radar 28: 2019-11 started
+[s04] radar 28: 2019-12 started
+[s04] radar 28 2019-12-04: no file (404)
+[s04] radar 28: 2020-01 started
+[s04] radar 28: 2020-02 started
+[s04] radar 28: 2020-03 started
+[s04] radar 28: 2020-04 started
+[s04] radar 28 2020-04-22: no file (404)
+[s04] radar 28 2020-04-30: no file (404)
+[s04] radar 28: 2020-05 started
+[s04] radar 28 2020-05-02: no file (404)
+[s04] radar 28 2020-05-03: no file (404)
+[s04] radar 28 2020-05-04: no file (404)
+[s04] radar 28 2020-05-06: no file (404)
+[s04] radar 28: 2020-06 started
+[s04] radar 28: 2020-07 started
+[s04] radar 28: 2020-08 started
+[s04] radar 28: 2020-09 started
+[s04] radar 28: 2020-10 started
+[s04] radar 28: 2020-11 started
+[s04] radar 28: 2020-12 started
+[s04] radar 28: 2021-01 started
+[s04] radar 28: 2021-02 started
+[s04] radar 28: 2021-03 started
+[s04] radar 28: 2021-04 started
+[s04] radar 28: 2021-05 started
+[s04] radar 28: 2021-06 started
+[s04] radar 28: 2021-07 started
+[s04] radar 28: 2021-08 started
+[s04] radar 28: 2021-09 started
+[s04] radar 28: 2021-10 started
+[s04] radar 28: 2021-11 started
+[s04] radar 28: 2021-12 started
+[s04] radar 28: 2022-01 started
+[s04] radar 28: 2022-02 started
+[s04] radar 28 2022-02-02: no file (404)
+[s04] radar 28: 2022-03 started
+[s04] radar 28: 2022-04 started
+[s04] radar 28 2022-04-18: no file (404)
+[s04] radar 28: 2022-05 started
+[s04] radar 28: 2022-06 started
+[s04] radar 28: 2022-07 started
+[s04] radar 28: 2022-08 started
+[s04] radar 28 2022-08-24: no file (404)
+[s04] radar 28 2022-09-01: no file (404)
+[s04] radar 28: 2022-09 started
+[s04] radar 28 2022-09-04: no file (404)
+[s04] radar 28: 2022-10 started
+[s04] radar 28: 2022-11 started
+[s04] radar 28 2022-11-30: no file (404)
+[s04] radar 28: 2022-12 started
+[s04] radar 28: 2023-01 started
+[s04] radar 28: 2023-02 started
+[s04] radar 28: 2023-03 started
+[s04] radar 28: 2023-04 started
+[s04] radar 28: 2023-05 started
+[s04] radar 28: 2023-06 started
+[s04] radar 28: 2023-07 started
+[s04] radar 28: 2023-08 started
+[s04] radar 28: 2023-09 started
+[s04] radar 28 2023-09-05: no file (404)
+[s04] radar 28 2023-09-06: no file (404)
+[s04] radar 28 2023-09-07: no file (404)
+[s04] radar 28 2023-09-08: no file (404)
+[s04] radar 28 2023-09-09: no file (404)
+[s04] radar 28 2023-09-10: no file (404)
+[s04] radar 28 2023-09-11: no file (404)
+[s04] radar 28 2023-09-12: no file (404)
+[s04] radar 28: 2023-10 started
+[s04] radar 28: 2023-11 started
+[s04] radar 28: 2023-12 started
+[s04] radar 28: 2024-01 started
+[s04] radar 28: 2024-02 started
+[s04] radar 28: 2024-03 started
+[s04] radar 28: 2024-04 started
+[s04] radar 28: 2024-05 started
+[s04] radar 28: 2024-06 started
+[s04] radar 28: 2024-07 started
+[s04] radar 28: 2024-08 started
+[s04] radar 28: 2024-09 started
+[s04] radar 28: 2024-10 started
+[s04] radar 28: 2024-11 started
+[s04] radar 28: 2024-12 started
+[s04] radar 28: 2025-01 started
+[s04] radar 28: 2025-02 started
+[s04] radar 28: 2025-03 started
+[s04] radar 28 2025-03-03: no file (404)
+[s04] radar 28: 2025-04 started
+[s04] radar 28 2025-04-13: no file (404)
+[s04] radar 28: 2025-05 started
+[s04] radar 28: 2025-06 started
+[s04] radar 28: 2025-07 started
+[s04] radar 28: 2025-08 started
+[s04] radar 28: 2025-09 started
+[s04] radar 28: 2025-10 started
+[s04] radar 28: 2025-11 started
+[s04] radar 28 2025-11-29: no file (404)
+[s04] radar 28: 2025-12 started
+[s04] radar 28: 2026-01 started
+[s04] radar 28: 2026-02 started
+[s04] radar 28: 2026-03 started
+[s04] radar 28: 2026-04 started
+[s04] radar 28: 2026-05 started
+[s04] radar 28 2026-05-03: no file (404)
+[s04] radar 28 2026-05-04: no file (404)
+[s04] radar 28 2026-05-05: no file (404)
+[s04] radar 28: 2026-06 started
+[s04] radar 28: 2026-07 started
+[s04] radar 28: finished -> radar28_hourly.csv
+[s04] radar 66: 2019-07 started
+[s04] radar 66: 2019-08 started
+[s04] radar 66 2019-08-06: no file (404)
+[s04] radar 66 2019-08-07: no file (404)
+[s04] radar 66: 2019-09 started
+[s04] radar 66: 2019-10 started
+[s04] radar 66 2019-10-14: no file (404)
+[s04] radar 66 2019-10-29: no file (404)
+[s04] radar 66 2019-11-01: no file (404)
+[s04] radar 66: 2019-11 started
+[s04] radar 66 2019-11-02: no file (404)
+[s04] radar 66 2019-11-03: no file (404)
+[s04] radar 66: 2019-12 started
+[s04] radar 66: 2020-01 started
+[s04] radar 66: 2020-02 started
+[s04] radar 66: 2020-03 started
+[s04] radar 66: 2020-04 started
+[s04] radar 66 2020-04-22: no file (404)
+[s04] radar 66 2020-04-25: no file (404)
+[s04] radar 66 2020-04-28: no file (404)
+[s04] radar 66: 2020-05 started
+[s04] radar 66 2020-05-05: no file (404)
+[s04] radar 66 2020-05-06: no file (404)
+[s04] radar 66: 2020-06 started
+[s04] radar 66: 2020-07 started
+[s04] radar 66: 2020-08 started
+[s04] radar 66: 2020-09 started
+[s04] radar 66: 2020-10 started
+[s04] radar 66: 2020-11 started
+[s04] radar 66: 2020-12 started
+[s04] radar 66 2020-12-19: no file (404)
+[s04] radar 66 2020-12-20: no file (404)
+[s04] radar 66 2020-12-21: no file (404)
+[s04] radar 66: 2021-01 started
+[s04] radar 66: 2021-02 started
+[s04] radar 66: 2021-03 started
+[s04] radar 66 2021-03-19: no file (404)
+[s04] radar 66: 2021-04 started
+[s04] radar 66: 2021-05 started
+[s04] radar 66: 2021-06 started
+[s04] radar 66: 2021-07 started
+[s04] radar 66: 2021-08 started
+[s04] radar 66 2021-08-26: no file (404)
+[s04] radar 66: 2021-09 started
+[s04] radar 66 2021-09-03: no file (404)
+[s04] radar 66 2021-09-04: no file (404)
+[s04] radar 66 2021-09-05: no file (404)
+[s04] radar 66 2021-09-08: no file (404)
+[s04] radar 66 2021-10-01: no file (404)
+[s04] radar 66: 2021-10 started
+[s04] radar 66: 2021-11 started
+[s04] radar 66 2021-11-17: no file (404)
+[s04] radar 66: 2021-12 started
+[s04] radar 66: 2022-01 started
+[s04] radar 66: 2022-02 started
+[s04] radar 66: 2022-03 started
+[s04] radar 66: 2022-04 started
+[s04] radar 66 2022-04-04: no file (404)
+[s04] radar 66: 2022-05 started
+[s04] radar 66: 2022-06 started
+[s04] radar 66: 2022-07 started
+[s04] radar 66 2022-07-27: no file (404)
+[s04] radar 66 2022-07-28: no file (404)
+[s04] radar 66: 2022-08 started
+[s04] radar 66 2022-09-01: no file (404)
+[s04] radar 66: 2022-09 started
+[s04] radar 66: 2022-10 started
+[s04] radar 66: 2022-11 started
+[s04] radar 66: 2022-12 started
+[s04] radar 66: 2023-01 started
+[s04] radar 66: 2023-02 started
+[s04] radar 66 2023-02-19: no file (404)
+[s04] radar 66 2023-02-23: no file (404)
+[s04] radar 66: 2023-03 started
+[s04] radar 66 2023-03-28: no file (404)
+[s04] radar 66 2023-03-29: no file (404)
+[s04] radar 66: 2023-04 started
+[s04] radar 66: 2023-05 started
+[s04] radar 66: 2023-06 started
+[s04] radar 66: 2023-07 started
+[s04] radar 66 2023-07-18: no file (404)
+[s04] radar 66: 2023-08 started
+[s04] radar 66: 2023-09 started
+[s04] radar 66: 2023-10 started
+[s04] radar 66: 2023-11 started
+[s04] radar 66: 2023-12 started
+[s04] radar 66: 2024-01 started
+[s04] radar 66: 2024-02 started
+[s04] radar 66: 2024-03 started
+[s04] radar 66: 2024-04 started
+[s04] radar 66: 2024-05 started
+[s04] radar 66: 2024-06 started
+[s04] radar 66: 2024-07 started
+[s04] radar 66: 2024-08 started
+[s04] radar 66: 2024-09 started
+[s04] radar 66: 2024-10 started
+[s04] radar 66: 2024-11 started
+[s04] radar 66: 2024-12 started
+[s04] radar 66 2024-12-23: no file (404)
+[s04] radar 66 2024-12-24: no file (404)
+[s04] radar 66: 2025-01 started
+[s04] radar 66: 2025-02 started
+[s04] radar 66: 2025-03 started
+[s04] radar 66: 2025-04 started
+[s04] radar 66 2025-04-02: no file (404)
+[s04] radar 66: 2025-05 started
+[s04] radar 66: 2025-06 started
+[s04] radar 66: 2025-07 started
+[s04] radar 66: 2025-08 started
+[s04] radar 66 2025-08-26: no file (404)
+[s04] radar 66 2025-08-27: no file (404)
+[s04] radar 66 2025-08-28: no file (404)
+[s04] radar 66 2025-08-29: no file (404)
+[s04] radar 66 2025-08-30: no file (404)
+[s04] radar 66 2025-08-31: no file (404)
+[s04] radar 66 2025-09-01: no file (404)
+[s04] radar 66: 2025-09 started
+[s04] radar 66 2025-09-02: no file (404)
+[s04] radar 66 2025-09-03: no file (404)
+[s04] radar 66 2025-09-04: no file (404)
+[s04] radar 66 2025-09-05: no file (404)
+[s04] radar 66 2025-09-06: no file (404)
+[s04] radar 66 2025-09-07: no file (404)
+[s04] radar 66 2025-09-08: no file (404)
+[s04] radar 66: 2025-10 started
+[s04] radar 66: 2025-11 started
+[s04] radar 66: 2025-12 started
+[s04] radar 66: 2026-01 started
+[s04] radar 66: 2026-02 started
+[s04] radar 66: 2026-03 started
+[s04] radar 66: 2026-04 started
+[s04] radar 66 2026-04-08: no file (404)
+[s04] radar 66: 2026-05 started
+[s04] radar 66: 2026-06 started
+[s04] radar 66: 2026-07 started
+[s04] radar 66: finished -> radar66_hourly.csv
+=== step 4 done in 2697s ===
+=== step 5: s05_soil ===
+[s05] 201001: 2846 days
+[s05] 203010: 2846 days
+[s05] 203030: 2846 days
+[s05] 204017: 2846 days
+[s05] 204025: 2846 days
+[s05] 204030: 2846 days
+[s05] 204034: 2846 days
+[s05] 204036: 2846 days
+[s05] 204037: 2846 days
+[s05] 204039: 2846 days
+[s05] 204056: 2846 days
+[s05] 204906: 2846 days
+[s05] 206014: 2846 days
+=== step 5 done in 103s ===
+=== step 6: s06_samples ===
+[s06] 567,198 samples
+label         0    1
+split               
+holdout   12598  246
+test     103694  266
+train    369671  944
+val       79713   66
+=== step 6 done in 15s ===
+=== step 7: s07_build_b ===
+[s07] dynamic_hourly.parquet: 804,960 rows
+[s07] 567,198 windows of 72 x 6 + 13 static; windows with NaN: 0; positives: 1522
+=== step 7 done in 14s ===
+=== step 8: s08_report ===
+[s08] data/report.md written
+
+python run_all.py --only 3 6 7 8
+=== step 3: s03_events ===       
+[s03] 201001: threshold 1.848 m (p99_train), 45 events
+[s03] 203010: threshold 2.631 m (p99_train), 42 events
+[s03] 203030: threshold 3.119 m (p99_train), 17 events
+[s03] 204017: threshold 1.711 m (p99_train), 37 events
+[s03] 204025: threshold 2.013 m (p99_train), 32 events
+[s03] 204030: threshold 1.212 m (p99_train), 27 events
+[s03] 204034: threshold 1.441 m (p99_train), 24 events
+[s03] 204036: threshold 2.184 m (p99_train), 23 events
+[s03] 204037: threshold 1.480 m (p99_train), 32 events
+[s03] 204039: threshold 1.747 m (p99_train), 23 events
+[s03] 204056: threshold 1.269 m (p99_train), 35 events
+[s03] 204906: threshold 6.013 m (p99_train), 16 events
+[s03] 206014: threshold 1.299 m (p99_train), 39 events
+=== step 3 done in 10s ===
+=== step 6: s06_samples ===
+[s06] 564,708 samples
+label         0     1
+split                
+holdout   11552   334
+test     103403   299
+train    368606  1088
+val       79354    72
+=== step 6 done in 16s ===
+=== step 7: s07_build_b ===
+[s07] dynamic_hourly.parquet: 804,960 rows
+[s07] 564,708 windows of 72 x 6 + 13 static; windows with NaN: 0; positives: 1793
+=== step 7 done in 15s ===
+=== step 8: s08_report ===
+[s08] data/report.md written
+=== step 8 done in 1s ===

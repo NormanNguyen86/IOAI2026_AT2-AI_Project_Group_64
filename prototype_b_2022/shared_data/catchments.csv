@@ -1,0 +1,7 @@
+catchment_id,awrc_id,name,lat,lon,threshold_m,threshold_type
+203010,203010,Leycester River at Rock Valley,-28.7381,153.163,2.869,p99
+203030,203030,Myrtle Creek at Rappville,-29.1116,152.9984,3.907,p99
+204017,204017,Bielsdown Creek at Dorrigo No.2 & No.3,-30.3073,152.7135,1.925,p99
+204025,204025,Orara River at Karangi,-30.2544,153.0323,2.124,p99
+204037,204037,Clouds Creek at Clouds Ck,-30.0938,152.6282,1.608,p99
+204056,204056,Dandahra Creek at Gibraltar Range,-29.4864,152.4456,1.376,p99

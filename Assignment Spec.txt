@@ -1,0 +1,582 @@
+# AT2 Specifications: 42172 Introduction to AI, Spring 2026
+
+
+Everything below is copied verbatim from Canvas (course 40998) unless marked as a note. The marking
+rubrics are the law: UTS grades strictly against them.
+
+
+## 1. Notes to read first (our summary, not Canvas text)
+- **Due:** all three deliverables, Fri 23 Oct 2026, 11:59pm.
+- **Team size is three**, so three AI techniques, one per member. The forms and reflection template
+ are built for three members, and the technique criterion's lower band penalises "less than
+ required technique choices".
+- **The video folder accepts a text entry only, not a file upload.** Host the video (unlisted
+ YouTube or a UTS OneDrive link) and paste the link. Test it from a logged-out browser.
+- **The reflection filename on Canvas includes the team number**, which the spec page omits:
+ `Surname_Firstname_TeamNumber_AT2_reflection.docx`. Follow the folder text.
+- Rubric bands: Exceeds 100%, Mastery 75%, Near 50%, Below 25%, No Evidence 0% of each criterion.
+- The report template is a generic project-plan outline. The rubric also marks stakeholders,
+ requirements, architecture, workflow, human oversight and ethics, so add headed subsections for them.
+
+
+## 2. Specification page (verbatim)
+
+
+### **Intent**:
+
+
+This assignment equips you with AI thinking and critical analysis of various phases in undertaking AI projects, including defining problem statement, assessing and selecting proper AI techniques, and developing methodologies, creating system architectures, processes and workflow, and evaluation criteria. The task trains you to search and integrate domain-specific knowledge, problem context, data and resources with AI techniques to design desirable solutions. The proposal integrates cross-disciplinary thinking, knowledge, and skills for data-driven evidence-based design to solve an interesting and challenging real-world problem.
+
+
+### **Objective: **
+
+
+This assessment task addresses the subject learning objectives SLO3 and SLO4.
+
+
+### **Course intended learning outcome(s):**
+
+
+C.1 and E.1
+
+
+### **Weighting:**
+
+
+35%
+
+
+### **Group Work:**
+
+
+Group, group and individually assessed
+
+
+### **Due date: **
+
+
+Both parts of this assessment task are due by 11:59PM, Friday, 23/10/2026
+
+
+### **Task**
+
+
+This is a two-part assessment task.
+
+
+In Part 1, you need to work in a small group to develop a written report that includes detailed design of a solution for solving _a significant real-world problem that affects society in a large scale, such as climate change, public health and education.  You can let your imagination fly and formulate a problem that has non-trivial societal impact and can be solved by chosen AI techniques. Each member in your team should explore one AI technique for solving the target problem. The report should include problem statement, background and motivation, specific objectives, data resources, solution designs including AI technique selection and justification, development process, expected outcomes, evaluation, and risk management, etc. A report template is available [here](https://canvas.uts.edu.au/courses/40998/files/12438437?verifier=1lYhehoSgtV8WMFqJXahlgrXh0n43dLuUc06ebUU&wrap=1). _
+
+
+_Your group also needs to produce a presentation video for end-users of their AI solution._
+
+
+In Part 2, you need to write a reflection report to present evidence that reflect what you have learned from this task, such as the AI application domain, challenges of the target problem and why selected AI technique can help, what contribution you have made to design the solution in Part 1 and what roles you were able to take if the proposed solution would be implemented. **In addition, in this reflection report, you also include a peer review for each of the other group members**. A template is available [here](https://canvas.uts.edu.au/courses/40998/files/12438333?verifier=Bp1ji0UD5HXFv5Vx0VGXhTcmzBLxvV6mGzUBN5cd&wrap=1).
+
+
+**Note. A weekly team progress log could be useful for collecting evidence of project development. **
+
+
+### **Deliverables:**
+
+
+1. A group report. length is 15- 20 pages.
+
+
+2. Group presentation video. The video length is no longer than 15 minutes. All members should be in the video.
+
+
+3. An individual reflection report.  Length is 3- 5 pages.
+
+
+**Notes: Each page refers to a standard A4 page with standard margins and single line spacing using Times New Roman, font-12.  **
+
+
+### **Reference style:**
+
+
+UTS APA referencing style.
+
+
+### **Mark allocations:**
+
+
+Part 1 weights 27 marks, including 12 marks for the report and 15 marks for video presentation; Part 2 weights 8 marks.
+
+
+### **Submission requirements**:
+
+
+Each submission will need to be submitted to the designated folders in the [assignments page](https://canvas.uts.edu.au/courses/40998/assignments) i.e. AT2 Part A and Part B.
+
+
+### **File name conventions**:
+
+
+Part 1, TeamNumber_AT2_report.pdf (or.docx) and TeamNumber_AT2_video.mp4 (or .mov).
+
+
+**Notes**: Part 1 is a group submission. Each group needs to have one team member to upload their AT2 AI Project Plan and Design report and video presentation by the due date.
+
+
+Part 2, YourSurname_YourFirstname_AT2_reflection.docx (.pdf)
+
+
+### **Feedback:**
+
+
+** **Summative feedback will be provided with the marks within 2-4 weeks after the due date.
+
+
+### **Suggestions of application areas:**
+
+
+1. Smart education system using AI + VR + cloud resource
+
+
+2. Smart city, such as smart traffic lights management to be adaptive to traffic flow
+
+
+3. Smart elderly care using smart sensors and AI techniques
+
+
+4. Smart transport service system using autonomous/self-driving cars
+
+
+5. Smart solar energy sharing system among neighbourhood using solar PV panels and AI technique
+
+
+6. Smart online shopping platform using VR
+
+
+7. Smart remote medical diagnosis and treatment recommendation
+
+
+## 3. Canvas submission folders and marking rubrics (verbatim)
+
+
+```
+AT2 AI project design and plan - Part A: Group Report
+ due (Sydney)  Friday, 23 October 2026 at 11:59 pm
+ due (raw UTC) 2026-10-23T12:59:59Z
+ points        12   group: Assessment Task 2
+ types         online_text_entry, online_upload
+ published     yes
+ url           https://canvas.uts.edu.au/courses/40998/assignments/276637
+ --- description ---
+ This is the folder for the submissions of AT2 Part A: Group report. This is a group submission. Each group needs to have one team member to submit the report file.
+  File name convention: TeamNumber_AT2_report.pdf (docx).
+ --- rubric (6 criteria, 12.000000000000002 pts) ---
+ [1.8] Societal problem, stakeholders, and requirements
+       ·  1.8 — Exceeds
+           Explains the problem, its causes, context, and impact with exceptional clarity; analyses end-users and stakeholders, including diverse needs and constraints; and derives coherent functional, non-functional, and societal requirements.
+       · 1.35 — Mastery
+           Explains the problem and its importance clearly, analyses key users, stakeholders, needs, and constraints, and derives workable requirements linked to the problem, with only minor omissions.
+       ·  0.9 — Near
+           Provides a broad or partly supported explanation of the problem, offers limited or generic stakeholder analysis, and presents requirements that are incomplete, vague, or weakly linked to the problem.
+       · 0.45 — Below
+           Shows poor understanding of the problem and impact, overlooks important users or stakeholders, and presents requirements that are unrealistic, contradictory, or minimal.
+       ·    0 — No Evidence
+           Explains no societal problem, identifies no users or stakeholders, and/or provides no meaningful requirements.
+ [1.8] Innovation and value proposition
+       ·  1.8 — Exceeds
+           Proposes an original, ambitious, and technically plausible AI usage; demonstrates why AI is necessary and superior to credible non-AI or existing alternatives; and articulates substantial, equitable, and measurable societal value.
+       · 1.35 — Mastery
+           Proposes a creative, relevant, and plausible AI usage with meaningful innovative elements, reasonably justifies the use of AI and differentiation from alternatives, and clearly explains expected societal benefits and value.
+       ·  0.9 — Near
+           Proposes a solution with limited originality or similarity to common applications, provides a generic or only partly convincing justification for AI, and describes benefits that are broad, overstated, or weakly evidenced.
+       · 0.45 — Below
+           Proposes a derivative, implausible, or poorly connected solution, uses AI without demonstrating its necessity, and provides unclear, trivial, or unsupported societal value.
+       ·    0 — No Evidence
+           Proposes no coherent solution, provides no justification for AI use, and articulates no societal value.
+ [2.4] AI technique analysis and design justification
+       ·  2.4 — Exceeds
+           Explains candidate AI techniques (matching with group size) with precise technical understanding, critically compares alternatives using problem-relevant criteria and evidence, and justifies selection or integration through explicit trade-offs and coherent design logic.
+       ·  1.8 — Mastery
+           Explains suitable AI techniques (matching with group size) accurately and with sound technical detail, compares their principal strengths and limitations using relevant evidence, and provides clear justification for the chosen approach or integration.
+       ·  1.2 — Near
+           Provides basic technical explanations of candidate techniques (matching with group size) with some misconceptions, offers a descriptive or uneven comparison that misses key criteria, and relies more on assertion than evidence to justify the design.
+       ·  0.6 — Below
+           Provides explanations with major errors or irrelevant or less than required technique choices, attempts little meaningful comparison, and presents unjustified or internally inconsistent design decisions.
+       ·    0 — No Evidence
+           Explains no relevant AI techniques, considers no alternatives, and/or provides no justification for the AI design.
+ [2.4] Data strategy, solution architecture, and workflow
+       ·  2.4 — Exceeds
+           Comprehensively specifies data sources, representation, governance, quality, and lifecycle; presents a coherent end-to-end architecture with well-defined components and interfaces; and precisely explains workflow, human oversight, feedback, and operational scenarios.
+       ·  1.8 — Mastery
+           Specifies suitable data needs and key governance and quality considerations, presents a workable and technically reasoned architecture connecting the major components, and clearly explains the main workflow and human interaction, with only minor gaps.
+       ·  1.2 — Near
+           Provides a general data strategy that misses important constraints, presents an incomplete or weakly connected architecture, and explains a simplified workflow that leaves major process gaps.
+       ·  0.6 — Below
+           Uses unrealistic or technically flawed data assumptions, presents a fragmented, implausible, or largely decorative architecture, and describes a confusing, contradictory, or non-AI-specific workflow.
+       ·    0 — No Evidence
+           Provides no data strategy, no system architecture, and/or no explanation of workflow or processes.
+ [1.8] Evaluation, risks, ethics, and limitations
+       ·  1.8 — Exceeds
+           Defines measurable, multidimensional evaluation criteria and credible validation methods; analyses technical, social, ethical, legal, safety, and misuse risks in context; and proposes proportionate mitigations while openly evaluating limitations.
+       · 1.35 — Mastery
+           Defines suitable and measurable evaluation criteria with feasible validation methods, analyses major risks, ethical issues, and limitations in context, and proposes reasonable mitigations for important concerns.
+       ·  0.9 — Near
+           Presents broad, incomplete, or weakly measurable evaluation criteria, discusses risks and ethics generically or omits important issues, and provides limited, reactive, or insufficiently justified mitigations.
+       · 0.45 — Below
+           Provides unrealistic, minimal, or disconnected evaluation, treats risks and ethics superficially or inaccurately, and offers absent or implausible mitigations and limitations.
+       ·    0 — No Evidence
+           Provides no evaluation approach, discusses no risks, ethics, or limitations, and/or proposes no mitigation strategies.
+ [1.8] Evidence, coherence, and professional communication
+       ·  1.8 — Exceeds
+           Synthesises authoritative literature throughout the argument, integrates all sections into one coherent, consistent, and persuasive proposal, and uses exemplary structure, visuals, academic style, citations, and editing.
+       · 1.35 — Mastery
+           Uses relevant and credible literature to support important claims and choices, presents a coherent proposal with clear links between sections, and communicates professionally through effective structure, visuals, academic style, and referencing, with only minor issues.
+       ·  0.9 — Near
+           Uses evidence unevenly or descriptively, presents understandable sections with weak connections or inconsistencies, and has writing, visuals, organisation, or referencing issues that sometimes impede clarity.
+       · 0.45 — Below
+           Uses sparse, unreliable, or poorly integrated evidence, presents disconnected contributions rather than one coherent proposal, and has communication or referencing problems that substantially impede understanding.
+       ·    0 — No Evidence
+           Uses no credible evidence, submits no coherent report, and/or provides communication that is absent or unusable.
+
+
+AT2 AI project design and plan -- Part A: Presentation video
+ due (Sydney)  Friday, 23 October 2026 at 11:59 pm
+ due (raw UTC) 2026-10-23T12:59:59Z
+ points        15   group: Assessment Task 2
+ types         online_text_entry
+ published     yes
+ url           https://canvas.uts.edu.au/courses/40998/assignments/293711
+ --- description ---
+ This is the folder for the submissions of AT2 Part A: Presentation Video. This is a group submission. Each group needs to have one team member to submit their video file.
+  File name convention: TeamNumber_AT2_video.mp4 (or .mov).
+ --- rubric (4 criteria, 15 pts) ---
+ [2.25] Audience focus and explanation of the problem
+       · 2.25 — Exceeds
+           Engages clearly defined end-users from the opening. Explains the societal problem in vivid, accessible, and accurate terms. Uses an inclusive scenario or narrative that makes the need immediately meaningful.
+       · 1.68 — Mastery
+           Addresses end-users consistently and effectively, explains the societal problem and its importance clearly in accessible language, and uses a relevant scenario, example, or user context to establish meaning.
+       · 1.12 — Near
+           Audience is only partly considered or shifts inconsistently. Problem explanation is general, jargon-heavy, or incomplete. User context is limited or weakly connected.
+       · 0.56 — Below
+           Presentation is aimed mainly at AI specialists or an unclear audience. Problem is confusing, inaccurate, or poorly motivated. No convincing user context or narrative is established.
+       ·    0 — No Evidence
+           No end-user audience is addressed; no societal problem is explained; and/or no meaningful context is provided.
+ [5.25] Solution, AI use, and user experience
+       · 5.25 — Exceeds
+           Explains the proposed solution and user journey with exceptional clarity. Makes the role of each AI technique understandable without sacrificing accuracy. Demonstrates coherent operation and expected benefits.
+       · 3.94 — Mastery
+           Explains the solution and main user journey clearly and accurately, describes AI techniques in accessible and generally correct terms for non-experts, and shows how the system operates and benefits users, with only minor omissions.
+       · 2.63 — Near
+           Solution explanation is incomplete or difficult to follow. AI use is oversimplified, jargon-heavy, or partly inaccurate. User journey or benefits are only partly demonstrated.
+       · 1.31 — Below
+           Solution is confusing, inconsistent, or implausible. AI techniques are unexplained or substantially misrepresented. How users interact or benefit is unclear.
+       ·    0 — No Evidence
+           No coherent solution is presented; no explanation of AI use is provided; and/or no user experience or benefits are shown.
+ [3] Evidence, responsibility, and credibility
+       ·    3 — Exceeds
+           Supports major claims with concise and credible evidence. Communicates risks, limitations, ethics, and safeguards honestly and accessibly. Balances ambition with a persuasive account of technical plausibility.
+       · 2.25 — Mastery
+           Supports key claims with relevant and credible evidence, explains important risks, limitations, ethics, and safeguards clearly, and presents an ambitious yet technically plausible solution.
+       ·  1.5 — Near
+           Evidence is limited, unclear, or weakly connected to claims. Responsible-use issues are mentioned only briefly or generically. Credibility relies on assertion rather than explanation.
+       · 0.75 — Below
+           Claims are largely unsupported or misleading. Risks and limitations are ignored or misrepresented. Presentation resembles science fiction without technical reasoning.
+       ·    0 — No Evidence
+           No evidence supports the claims; no risks, limitations, or safeguards are acknowledged; and/or no basis for technical plausibility is provided.
+ [4.5] Delivery, visual communication, and team integration
+       ·  4.5 — Exceeds
+           Delivers a polished, engaging, well-paced presentation with excellent audio. Uses purposeful visuals, demonstrations, and on-screen text that enhance understanding. Shows seamless team integration, balanced contribution, and a memorable conclusion.
+       · 3.36 — Mastery
+           Delivers a clear, confident, and engaging presentation with suitable pacing and understandable audio. Uses relevant, high-quality visuals that support comprehension. Shows coordinated teamwork and generally balanced contributions.
+       · 2.24 — Near
+           Delivery is uneven, overly scripted, rushed, or slow. Visuals or audio are inconsistent and sometimes distract from meaning. Team contributions or transitions are noticeably unbalanced.
+       · 1.11 — Below
+           Delivery is difficult to follow or substantially unprepared. Visual or audio quality seriously impedes understanding. Presentation is fragmented with little evidence of team integration.
+       ·    0 — No Evidence
+           No assessable presentation is submitted. Visual and audio communication are absent or unusable. No team contribution can be established.
+
+
+AT2 AI project design and plan - Part B: Individual Reflection Report
+ due (Sydney)  Friday, 23 October 2026 at 11:59 pm
+ due (raw UTC) 2026-10-23T12:59:59Z
+ points        8   group: Assessment Task 2
+ types         online_upload
+ published     yes
+ url           https://canvas.uts.edu.au/courses/40998/assignments/276639
+ --- description ---
+ This folder is for submissions of individual reflection report.
+  File name convention: YourSurname_YourFirstname_TeamNumber_AT2_reflection.docx (.pdf).
+ --- rubric (4 criteria, 8 pts) ---
+ [1.6] Learning and critical understanding
+       ·  1.6 — Exceeds
+           Demonstrates insightful and integrated learning about the application domain and societal challenge, explains relevant AI techniques and their capabilities with precise and in-depth understanding, and critically analyses design challenges, alternatives, and trade-offs.
+       ·  1.2 — Mastery
+           Demonstrates sound and substantial learning about the application domain and societal challenge, explains relevant AI techniques accurately with generally correct detail, and clearly discusses key design challenges and trade-offs.
+       ·  0.8 — Near
+           Describes basic learning with limited depth or integration, explains AI techniques generally but with some gaps or minor inaccuracies, and identifies challenges or trade-offs through mostly descriptive analysis.
+       ·  0.4 — Below
+           Provides superficial or fragmented statements about learning, shows weak or substantially inaccurate understanding of AI techniques, and gives little meaningful consideration to challenges or trade-offs.
+       ·    0 — No Evidence
+           Provides no meaningful evidence of learning, no relevant explanation of AI techniques, and/or no analysis of challenges or trade-offs.
+ [2.4] Evidence and evaluation of individual contribution
+       ·  2.4 — Exceeds
+           Provides specific and verifiable evidence of substantial contributions across research, analysis, AI technique investigation, report writing, and video preparation; clearly explains how the individual work influenced key group decisions and project quality; and evaluates personal strengths, limitations, and opportunities for improvement with exceptional honesty and insight.
+       ·  1.8 — Mastery
+           Provides clear and adequate evidence of relevant individual contributions, connects personal work to group decisions and outputs, and thoughtfully reflects on personal strengths, limitations, and opportunities for improvement.
+       ·  1.2 — Near
+           Lists individual contributions with limited evidence or specificity, only partly explains the connection between personal work and group outcomes, and provides a mostly descriptive reflection on strengths and areas for improvement.
+       ·  0.6 — Below
+           Makes vague or unsupported claims about individual contribution, shows little connection between personal work and group outcomes, and provides superficial or defensive self-evaluation.
+       ·    0 — No Evidence
+           Provides no evidence of individual contribution, does not explain any effect on group outputs, and provides no meaningful self-evaluation.
+ [1.6] Future implementation role and professional development
+       ·  1.6 — Exceeds
+           Defines a credible future implementation role with precisely scoped responsibilities, links the role convincingly to project needs, personal contribution, and relevant skills.
+       ·  1.2 — Mastery
+           Defines a clear and appropriate future role with relevant responsibilities, links the role reasonably well to project needs and personal capabilities.
+       ·  0.8 — Near
+           Names a future role but leaves responsibilities broad, only partly explains the connection to the project or personal capabilities.
+       ·  0.4 — Below
+           Presents an unrealistic, unclear, or unjustified future role, makes little connection to project needs or personal skills.
+       ·    0 — No Evidence
+           Identifies no future role, explains no connection to implementation.
+ [2.4] Teamwork reflection and peer review
+       ·  2.4 — Exceeds
+           Critically examines what worked well, the challenges encountered, and how collaboration evolved; provides fair, specific, and evidence-based peer reviews for every other group member; and derives actionable lessons for improving future teamwork and personal practice.
+       ·  1.8 — Mastery
+           Reflects thoughtfully and adequately on collaboration, successes, and challenges; provides relevant, balanced, and reasonably supported peer reviews for the other group members; and identifies clear and useful lessons for future teamwork.
+       ·  1.2 — Near
+           Describes teamwork with limited analysis of causes or effects, provides peer reviews that are general, uneven, or supported by little evidence, and identifies broad or underdeveloped lessons for future teamwork.
+       ·  0.6 — Below
+           Provides a superficial, one-sided, or inconsistent teamwork reflection, omits peer reviews for some members or provides unsupported reviews, and identifies few meaningful lessons for future collaboration.
+       ·    0 — No Evidence
+           Provides no teamwork reflection, no peer reviews, and no lessons for future teamwork.
+
+
+```
+
+
+## 4. Group report template, section by section (42172_AT2 Project Plan and Design_Template_final.docx)
+
+
+Cover: Project Group Number, Authors (names and student IDs), Date, Semester, Year, UTS. The cover's
+"date submitted for Assessment Task 3" is template residue; this is AT2.
+
+
+```
+Summary or Executive Summary
+This section briefly summarises the purpose of the project, major findings and conclusions. It is designed for those who do not have the time to read the entire report and as a means of refreshing a reader's mind at some later time. It is probably the most important section of the report, because it is almost certain to be read. The summary can be up to one page.
+
+
+Introduction
+The Introduction is an extremely important part of any report. It should not include too much detail, but it should give the reader a good idea of where the report is going (including a brief description of the contents of the report).
+
+
+This section need include the following subheadings:
+Business context
+The part presents a logical and informative background and clear-defined business objectives.
+
+
+Problem statement
+This part should address the following issues:
+what was the problem and its context,
+why was it a problem, and
+Why is the project necessary and
+How will the problem be solved (briefly).
+
+
+Note. The problem in this assignment should be a significant problem that affects society in a large scale, such as climate change, public health and education. You can let your imagination fly and design a problem that can be solved by AI techniques (not necessarily the ones covered in this subject)
+
+
+Project Proposal
+Project aims and Objectives
+This part presents the project aims and project objectives to achieve the business objectives.
+
+
+Methodology
+This part presents the tasks to achieve the project objectives. Each task is a piece of work that needs certain time to complete (i.e., associated time allocation). For each task, explain clearly what it is, what the expected results including the milestones from completing this task and how this task contributes to the project objective.
+
+
+Expected outcomes
+This part presents what this project will deliver upon its completion.
+
+
+Benefits and significance of this project
+This part presents the benefits from this project and significance of the expected outcomes.
+
+
+Resources
+This part presents all the resources that could be used for the project, including personnel (project team formation with all required roles and responsibilities of these roles, computational resources, data acquisition / purchase costs, etc.
+
+
+
+
+Risks
+This part presents all the risk factors that influence the project from technical to social aspects, such as risk factors related to personnel, data collection and computational power and deployment environment.
+
+
+Timeline
+This part presents the time frame required to complete this project and time allocation to each of the tasks.
+
+
+Communication of expected outcomes
+This part presents the plan of how to disseminate the expected outcomes to generate some benefits and/or social impacts.
+
+
+
+
+Solution design
+For each task listed in the previous section, how will this task be carried out, including what resources are needed, what AI techniques can be considered and how these selected AI techniques work in this problem context, and what are the selection criteria for determination of the technique that will be used in the solution, how to produce the expected outcomes and how to evaluate the results.
+
+
+Implementation design
+This part presents the detailed design of how the tasks listed in the proposal will be implemented, including the potential development environment, libraries, tools, and/or frameworks that could be used to carry out the tasks, and AI technique selection and justification.
+
+
+Evaluation design
+This part presents the design of evaluation strategies for validating the solution.
+
+
+Risk management
+This part presents the risk management plan which includes the strategies that address all risk factors listed in the proposal section.
+
+
+List of References
+When you use material from other reports or books, you must properly acknowledge it, by citing the report or book in a list of references, and referring to the list at the places in the text where the material is used. Please use The APA (American Psychological Association) referencing style in this report.
+Citations and References are important parts of writing in an academic environment.
+
+
+Appendices
+Detailed material that is not essential to, but supports the information contained in the body of the report, should be placed in an appendix. Appropriate appendix materials include supporting data, detailed explanations of methodologies or procedures, derivation of formulas, conversion factors, and data collection formats, protocols, and checklists. Appendices are a powerful means of fully documenting and supporting the results of the study without cluttering the body of the report.
+
+
+```
+
+
+## 5. Reflection template (42172_AT2_Reflection_final-1.docx)
+
+
+```
+
+
+42172 AT2: Part B Reflection
+ 
+Part 1 – Peer assessments  
+
+
+Complete a short peer assessment of the other group members in your team for Assessment Task 2 – AI project plan and design in this subject.
+For each group member please comment on the following aspects: 
+ 
+Commitment to the report of project plan and design. 
+Ability to actively engage in collaboration with the team(attitudes, manners, communication styles, etc.). 
+
+
+ 
+
+
+Project group number:  
+
+
+Group member 1: 
+
+
+Group member 2: 
+
+
+ 
+Part 2 – Self reflection 
+
+
+Complete a self-reflection on your own experience working within your project team. This reflection should comment on the following aspects: 
+ 
+Your individual self-learning journey(enjoyable moments, barriers, resolutions, etc.). 
+Your self-team collaboration experience of making contribution to the group report (highlighting challenges, efforts to handle the challenges, the lessons learned from the efforts, and future improvements). 
+ 
+Note: Your reflection should include references to evidence such as your contributions to the report and team collaboration.
+
+
+ 
+Individual reflection: 
+
+
+```
+
+
+## 6. Peer review form (peer review form-42172.docx, dated Spring 2025)
+
+
+Three-member group form. Contribution factors 0-100 per member, summing to 100. Emailed to the
+coordinator, not uploaded to Canvas.
+
+
+```
+
+
+42172 Assessment Task 2 Peer Review Form
+
+
+Year: 2025
+Semester: Spring
+AI Project Group number:
+
+
+Group members:
+Member 1: _______________________
+Member 2: _______________________
+Member 3: _______________________
+Step 1: As a group, pick one option from the following two options:
+[     ]   Option 1: This option is for a group that has consensus on Individual Contribution factors (0-100) of all members for each group-based deliverable. Go to Step 2.
+[     ]   Option 2: This option is for a group that cannot reach consensus on Individual Contribution factors (0-100) of all members for each group-based deliverable. All members do Step 3.
+Step 2 (for groups with Option 1)
+Fill up the following table, where the contribution factors in each column should be added up to 100, and send the form to the subject coordinator via email.
+Table for Option 1
+Group member
+| Contribution factor (0-100)
+| All members’ signatures
+| Member 1
+|  |  | Member 2
+|  |  | Member 3
+|  |  | Step 3 (for groups with Option 2)
+Each member fills up the following table and sends this form to the subject coordinator via email.
+Table for Option 2
+Group member
+| Contribution factor（0-100）
+| reviewer signatures
+| Member 1
+|
+| Signature of member X
+| Member 2
+|
+| Signature of member X
+| Member 3
+|
+| Signature of member X
+| where X represents a member in the group, i.e., X= 1,2,or 3.
+How are individual marks calculated based on the peer review report (s)?
+The individual mark will be calculated as:
+individual contribution factor * group total mark
+where the individual contribution factor of one member is the agreed contribution factor in Option 1 or the averaged contribution factors given by all members in Option 2. The group total mark is calculated by group mark * number of members.
+Note: The individual mark will be capped by 100 points.
+Here is an example:
+A Project Group Y gets 75/100 for the group-based deliverable.
+Option 1.
+Table for Option 1
+Group member
+| Contribution factor (0-100)
+| All members’ signatures
+| 1
+| 45
+| 1-3’s signatures
+| 2
+| 35
+|  | 3
+| 20
+|  | The individual marks are shown in the following table:
+
+
+Option 2
+The contribution factor tables received from three members as follows:
+
+
+The individual marks of each member in each group-based deliverable are calculated as follows:
+
+
+```
+
+
+

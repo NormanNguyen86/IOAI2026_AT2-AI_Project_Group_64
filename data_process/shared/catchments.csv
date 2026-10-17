@@ -1,0 +1,14 @@
+catchment_id,awrc_id,name,lat,lon,area_km2,radar_id,radar_dist_km,mask_cells,threshold_m,threshold_type
+201001,201001,Oxley River at Eungella,-28.3553,153.292,215.0,66,71.1,856,1.848,p99_train
+203010,203010,Leycester River at Rock Valley,-28.7381,153.163,176.1,66,98.9,704,2.631,p99_train
+203030,203030,Myrtle Creek at Rappville,-29.1116,152.9984,387.6,28,59.6,1549,3.119,p99_train
+204017,204017,Bielsdown Creek at Dorrigo No.2 & No.3,-30.3073,152.7135,74.1,28,84.7,298,1.711,p99_train
+204025,204025,Orara River at Karangi,-30.2544,153.0323,134.4,28,74.1,535,2.013,p99_train
+204030,204030,Aberfoyle River at Aberfoyle,-30.2603,152.0083,208.7,28,125.6,835,1.212,p99_train
+204034,204034,Henry River at Newton Boyd,-29.763056,152.213333,400.3,28,91.4,1607,1.441,p99_train
+204036,204036,Cataract Creek at Sandy Hill(below Snake Cre,-28.9341,152.2171,238.7,28,104.4,954,2.184,p99_train
+204037,204037,Clouds Creek at Clouds Ck,-30.0938,152.6282,62.9,28,65.6,251,1.48,p99_train
+204039,204039,Maryland River at D/S Wylie Ck,-28.468,152.1978,385.7,66,147.3,1541,1.747,p99_train
+204056,204056,Dandahra Creek at Gibraltar Range,-29.4864,152.4456,112.5,28,58.5,448,1.269,p99_train
+204906,204906,Orara River at Glenreagh,-30.07,152.98,432.5,28,65.9,1730,6.013,p99_train
+206014,206014,Wollomombi River at Coninside,-30.476389,152.028333,370.1,28,126.9,1477,1.299,p99_train

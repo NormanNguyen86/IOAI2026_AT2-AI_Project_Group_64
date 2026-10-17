@@ -1,0 +1,50 @@
+{
+  "_note": "Shared constants. Every script and both models read these values instead of typing them. Values marked TO_CONFIRM must be agreed by the team.",
+  "region": "Richmond River basin (Northern Rivers), NSW",
+  "grid": {
+    "crs": "EPSG:3577",
+    "cell_m": 250,
+    "tile_cells": 64
+  },
+  "time": {
+    "zone": "UTC",
+    "step": "1h",
+    "step_convention": "hour-ending: value stamped h covers (h-1h, h]",
+    "history_hours": 72,
+    "horizon_hours": 6
+  },
+  "period": {
+    "start_utc": "2016-01-01T00:00:00Z",
+    "end_utc": "2025-12-31T23:00:00Z",
+    "status": "TO_CONFIRM against the first year of Rainfields3 on NCI"
+  },
+  "split": {
+    "holdout": {
+      "name": "lismore_2022",
+      "start_utc": "2022-02-20T00:00:00Z",
+      "end_utc": "2022-04-10T00:00:00Z"
+    },
+    "val_years": [2021],
+    "test_years": [2024],
+    "gap_hours": 78
+  },
+  "label": {
+    "rule": "1 if a flood onset at the outlet gauge falls in (issue, issue + horizon]",
+    "onset_min_hours_below": 24,
+    "fallback_threshold": "99th percentile of the gauge's hourly level in train years (TO_CONFIRM)"
+  },
+  "missing": {
+    "min_scan_fraction_per_hour": 0.9,
+    "rule": "an hour below this fraction is missing (not 0 mm); a sample with any missing hour in its history is dropped"
+  },
+  "soil": {
+    "rule": "every hour of a sample uses the AWRA-L value of the day before the issue date"
+  },
+  "files": {
+    "catchments": "catchments.csv",
+    "events": "events.csv",
+    "samples": "samples.csv",
+    "missing_hours": "missing_hours.csv",
+    "mask": "masks/{catchment_id}.tif"
+  }
+}

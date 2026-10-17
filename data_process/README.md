@@ -35,7 +35,108 @@ Everything else is downloaded automatically from two public services:
 | Onset | First hour above the threshold after ≥ 6 h below. A rise after fewer hours below is merged into the previous event (excluded, never labelled 0) | Keeps a second flood peak after a short dip |
 | Radar QC | An hour is unusable if any scan is missing, coverage < 90%, a cell carries the fill code (≥ 300 mm/h), the catchment maximum is stuck (same value ≥ 6 h, ≥ 20 mm/h), or it lies in a documented manual exclusion (`radar.qc_exclude`) | Missing or wrong rain is never treated as 0 mm |
 
-## 3. Run
+## 3. How the label is made
+
+The question every model answers is: **"Will the river at this gauge start to flood within the next 6 hours?"** It is answered once per catchment per hour.
+
+### 3.1 Threshold: what "flood" means at a gauge
+- The threshold is a **river level in metres at the outlet gauge**, measured from that gauge's own zero. It is not a flood depth, and it cannot be compared between gauges (1.21 m at 204030, 6.01 m at 204906).
+- **Default (`p99_train`):** the 99th percentile of the gauge's hourly maximum level over the **train** hours only (holdout excluded). The river is above it about 1% of the time (about 88 h a year).
+  - It means "unusually high water for this gauge".
+  - Train-only avoids using information from the validation or test years.
+- **Better, when available (`manual`):** the official *minor flood level* published by BoM/SES for the gauge, set by impact (low roads and bridges start to flood). Enter it in `config.json → label.manual_thresholds`.
+- **Limit:** p99 is statistical. At some gauges it is below the official minor level, so some positives are high flows that do no damage. At others it may be above it.
+
+### 3.2 From river level to flood events (`shared/events.csv`)
+1. **Hourly level.** BoM 15-min readings are turned into the **maximum level in each UTC hour (h − 1 h, h]**.
+2. **Onset.** The first hour the level is above the threshold after it has been **below for at least 6 h** (`label.onset_min_hours_below`).
+3. **End.** The first hour back below the threshold.
+4. **Short dips.** If the river rises above again after fewer than 6 h below, the rise is **merged into the previous event**, which then continues. It is neither a new onset nor a "no flood" hour.
+   - Of 434 upward crossings in the current data, 390 are onsets and 44 are merged.
+   - The old 24 h rule would have missed 97 crossings, including the main Lismore peak of 27 Feb 2022 at 203010.
+
+### 3.3 From events to one label per issue hour (`shared/samples.csv`)
+For each catchment and each whole hour `t` (the issue time):
+
+| Situation at issue time t | Result |
+|---|---|
+| An onset falls in (t, t + 6 h] | `label = 1` |
+| No onset in (t, t + 6 h], river below threshold at t | `label = 0` |
+| River already above threshold at t (inside an event) | **row removed**: the flood has already started, so there is nothing to forecast |
+| River level missing at t or in any hour of (t, t + 6 h] | **row removed**: the label is unknown |
+| Any of the 72 radar hours before t unusable (section 4.4) | **row removed**: incomplete input |
+| t within 78 h of a change of split (not holdout) | **row removed**: input or label window would cross two sets |
+
+**Example (Leycester River at Rock Valley, 203010, threshold 2.631 m).** The onset is at 12:00 UTC on 26 Feb 2022.
+- Issue times 06:00–11:00 → label 1.
+- Issue times up to 05:00 → label 0.
+- From 12:00 until the river falls back below 2.631 m → removed.
+
+### 3.4 Why "onset" and not "above threshold at any time in the next 6 h"
+The second definition gives 4–5 times more positives (train 1.22% instead of 0.29%; holdout 20.8% instead of 2.8%). But almost all the extra positives are hours when the river is **already** flooding. Those are easy to predict ("still flooding in the next hour") and have no warning value, so they would inflate scores and blur the comparison between candidates. The imbalance is instead handled in training (class weights or undersampling negatives in train only, then probability calibration).
+
+## 4. What the data look like (run of 17 Oct 2026)
+
+Charts and longer notes for each part are in `notebooks/inspect_data.ipynb` (same section names); the full tables are in `data/report.md`.
+
+### 4.1 Catchments and radar domains
+- 13 catchments pass the rule, out of 65 NSW CAMELS-AUS catchments of 20–500 km².
+- **Size:** 63–433 km².
+- **Radar:**
+  - 10 use Grafton (radar 28, 58–127 km away);
+  - 3 use Mt Stapylton (radar 66: 201001, 203010, 204039; 71–147 km away).
+  - Radar estimates may be weaker for the farthest catchments, because the beam is higher above the ground there.
+- **Extent:** 9–37 km across. Only 204017, 204025 and 204037 fit a 16 km map tile.
+- **Static attributes:** they vary widely (mean elevation 157–1,303 m, slope 7–29%, forest 17–100%). Urban share is about 0 everywhere and carries little information.
+
+### 4.2 River level (label source)
+- 97–100% of hours have a reading in every year.
+- The lower 2026 values (93–99%) are recent data still being processed by BoM.
+- Some gauges flat-line during the 2019 drought, and a few show step changes (possible datum or sensor changes). None creates a false onset.
+
+### 4.3 Flood events
+- **392 onsets:** train 231, val 18, test 84, holdout 59.
+- **Seasonality:** 81% fall in December–May, 46% in February–March, 9% in June–September.
+- **Duration:** median 14 h above threshold; 29% last 6 h or less.
+
+### 4.4 Radar rain
+Each radar hour is built from four 15-min files. An hour is **usable** only if all of these hold:
+- all 4 scans exist;
+- at least 90% of the catchment has data;
+- no cell carries the fill code (≥ 300 mm/h; the stored value 65535 means 3,276.7 mm);
+- the catchment maximum is not stuck at one value for ≥ 6 h while ≥ 20 mm/h;
+- the hour is not in a manual exclusion (`radar.qc_exclude`, each entry with a written reason).
+
+| | Grafton (28) | Mt Stapylton (66) |
+|---|---|---|
+| Days missing on NCI | 33 | 50 |
+| Hours with 1–3 of 4 scans | 533 (322 have 3 scans) | 481 (331 have 3 scans) |
+| Usable hours | 96.5–97.0% | 96.2% |
+
+- **Plausibility:** annual totals follow known climate (dry 2019 and 2023, wet 2020–2022 and 2025). Coastal catchments are about twice as wet as tableland ones.
+- **Suspected artefacts:** three periods with extreme rain but almost no river response. One is excluded (204056, April 2024); two are under review (see section 7).
+
+### 4.5 Soil water (AWRA-L)
+- No gaps.
+- **Upper layer (0–0.1 m):** reacts within a day.
+- **Lower layer (0.1–1 m):** carries the seasonal wetness. It is near empty in 2019 and late 2023, and near full in 2020–2022.
+- Values are model estimates (daily, about 5 km). Each hour uses the previous local day.
+
+### 4.6 Master table
+- **564,708 rows**, about 70% of all candidate issue hours.
+- **Positives:**
+
+  | Split | Positives | Share |
+  |---|---|---|
+  | train | 1,088 | 0.29% |
+  | val | 72 | 0.09% |
+  | test | 299 | 0.29% |
+  | holdout | 334 | 2.8% |
+
+- **Why rows are dropped:** almost entirely radar gaps (about 28% of candidate hours). Level gaps and "already in flood" remove at most about 1,000 hours per catchment.
+- **Test period:** 214 of the 299 test positives fall in January–March 2025.
+
+## 5. Run
 
 ```bash
 python run_all.py              # steps 1-8
@@ -61,7 +162,7 @@ python run_all.py --only 3 6 7 8   # after changing label or QC settings (second
 
 **After a run**, open `notebooks/inspect_data.ipynb`. It inspects every source with charts and written notes, and runs 7 automatic checks. See `data/DATA_DICTIONARY.md` for every file and column.
 
-## 4. What each member uses
+## 6. What each member uses
 
 All members predict the **same rows** of `shared/samples.csv` (`catchment_id, issue_utc, label, split`) and must use only data at or before `issue_utc`. Never add, drop or re-label rows: a missing prediction counts as a gap in the comparison.
 
@@ -110,23 +211,55 @@ Apart from `samples.csv`, these files are ready for A:
 
 C reads `shared/samples.csv` and chooses its own inputs. The files listed for A (radar fields via `radar_maps.py`, boundaries, soil, static attributes) are available to C as well.
 
-## 5. Current dataset (run of 17 Oct 2026)
+## 7. Open decisions for the team
 
-| | |
-|---|---|
-| Catchments | 13: 10 on Grafton radar, 3 on Mt Stapylton; 63–433 km² |
-| Flood onsets | 392 (train 231 · val 18 · test 84 · holdout 59) |
-| Samples | 564,708 (positives: train 1,088 · val 72 · test 299 · holdout 334) |
-| Radar | 96–97% of hours usable; 83 radar days missing on NCI; 1 manual exclusion (204056, April 2024) |
+The data above are final for now. These choices change the data and need agreement first. Each needs only `config.json` edits and a partial rerun.
 
-**Open decisions for the team** (details in the notebook):
-1. Two more suspected radar artefacts to review: 204056 July 2024 and 204037 April 2024.
-2. Accept hours with 3 of 4 scans? Usable issue times would rise from 71.9% to 84.4%.
-3. Enter official minor flood levels where they exist.
-4. The validation year is thin (18 events): use time-based cross-validation inside train, or report wide uncertainty.
-5. Agree the tile size with member A.
+### 7.1 Two more suspected radar artefacts
+- **204056, ending 2 July 2024:** 562 mm in 72 h, but the river reached only 0.40 m.
+- **204037, ending 16 April 2024:** 456 mm in 72 h, but the river reached only 0.37 m.
 
-## 6. Conventions verified on real data
+Rain like this on small, steep catchments cannot leave the river at baseflow. The real floods in the data show the expected response: 203010 had 453 mm and rose to 13.2 m.
+
+- **If kept:** the model learns that extreme rain can produce no flood. This pushes predicted probabilities down in exactly the situations where a warning matters.
+- **If excluded:** we lose about 2 weeks of rows at two catchments.
+- **To exclude:** add both periods to `radar.qc_exclude` with this evidence as the reason, then run `python run_all.py --only 6 7 8`.
+
+### 7.2 Accept radar hours with 3 of 4 scans?
+- **What a missing scan is.** Each radar hour is the sum of four 15-min accumulation files. A missing scan means one of those files is absent at NCI, usually because of a radar outage, maintenance or a data transfer gap. The whole radar is affected, not one catchment. For that hour, 15 minutes of rain are simply unknown.
+- **How often.** 322 hours (Grafton) and 331 hours (Mt Stapylton) have exactly 3 scans. A further 211 and 150 hours have only 1–2 scans and stay unusable in any case.
+  - Most are isolated single hours: 368 of 413 partial-hour runs at Grafton.
+  - About a third sit at the edge of a longer outage.
+  - We found no sign that they are more frequent in rainy hours.
+- **Why it matters.** One unusable hour removes every issue time whose 72 h history contains it. So these few hundred hours cost about 12 percentage points of usable issue times: the share would rise from 71.9% to 84.4% if they were accepted.
+- **Risks if accepted:**
+  1. **Under-estimated rain.**
+     - Summing 3 scans misses up to a quarter of the hour.
+     - Scaling by 4/3 assumes the missing 15 minutes rained like the other 45. That is wrong for a short convective burst, which is exactly the rain that triggers flash floods.
+     - Either way, the error is largest in the hours that matter most.
+  2. **Inconsistent inputs between candidates.** A, B and C must apply the same fill rule, or they are no longer compared on equal inputs.
+  3. **Possible bias at outage edges.** If outages are linked to storms (power or communication failures), the hours next to them may be systematically wrong.
+  4. **More code to verify.** The scaling has to be added to `s04_radar.py` and `radar_maps.py`, and steps 4–8 rerun (about 45 minutes).
+- **A middle way:**
+  - accept a 3-scan hour only if it is the only partial hour in the 72 h window;
+  - and add `n15` (scan count) as an extra input, so the model knows the hour is less reliable.
+
+### 7.3 Official minor flood levels
+Replacing `p99_train` thresholds with official minor flood levels makes "flood" mean "impact begins" rather than "unusually high water".
+- **How:** collect the levels from BoM flood warning pages or local SES flood plans, enter them in `label.manual_thresholds`, and run `python run_all.py --only 3 6 7 8`.
+- **Effect:** the numbers of events and positives will change.
+
+### 7.4 The validation year is thin
+- Jul 2023 – Jun 2024 has only 18 onsets (72 positive rows), and 4 catchments have none. Choosing an alert threshold or a best epoch on this is unreliable.
+- **Options:**
+  - time-based cross-validation inside the train years (for example leave-one-water-year-out);
+  - or keep the split and report validation scores with bootstrap-by-event uncertainty.
+
+### 7.5 Tile size for member A
+- Only 3 of 13 catchments fit a 16 km tile (section 6, Member A).
+- This must be agreed before A builds tiles, because it decides how much of each catchment's rain the CNN can see.
+
+## 8. Conventions verified on real data
 
 - Radar files are stamped with the **end** of the 15 minutes (`valid_time`), in UTC.
 - BoM hourly-mean level values are stamped at the **start** of the hour. The pipeline therefore uses the 15-min readings and takes the hour-ending maximum itself.
@@ -134,7 +267,7 @@ C reads `shared/samples.csv` and chooses its own inputs. The files listed for A 
 - The radar fill code (65535 → 3,276.7 mm) appears in a few files and is treated as missing.
 - The Python radar step reproduces the browser prototype's catchment rain for Dec 2021 – Apr 2022 to within 0.005 mm. `radar_maps.py` tiles agree with the hourly table: the 6 h sum at 203010 was 109.6 mm vs 110.1 mm.
 
-## 7. Folder layout
+## 9. Folder layout
 
 ```
 data_process/
